@@ -2,13 +2,14 @@ package internal
 
 import (
 	"fmt"
+	"github.com/spf13/viper"
 	"io"
 	"os"
 )
 
 func GetCategoryPrompt(category string) string {
 	// Load category prompt from: ../prompts/{category}/system.md
-	path := fmt.Sprintf("./prompts/%s/system.md", category)
+	path := fmt.Sprintf("%s/%s/system.md", viper.GetString("prompts.path"), category)
 	// open path and read content
 	open, err := os.Open(path)
 	if err != nil {

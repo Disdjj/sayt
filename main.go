@@ -23,10 +23,9 @@ func main() {
 		println("File is required")
 		return
 	}
-	response, err := internal.CompleteWithFile(internal.Arg.File)
+	internal.CompleteWithFile(internal.Arg.File)
 	if err != nil {
 		println(err)
 		return
 	}
-	println(response)
 }
