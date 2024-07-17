@@ -21,7 +21,6 @@ func useImpl(cmd *cobra.Command, args []string) {
 		return
 	}
 	prompt := internal.CategoryMap[promptName]
-	fmt.Println("args", args)
 
 	if len(args) >= 2 {
 		internal.Complete(prompt, args[1])
