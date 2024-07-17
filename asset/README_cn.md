@@ -1,5 +1,7 @@
 # SAYT (Say-it)
 
+![Project Icon](icon.svg)
+
 SAYT 是一个通过命令行与语言模型（LLM）交互的工具。它允许用户通过终端中的简单命令与 AI 助手进行通信。
 
 ## 目录

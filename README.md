@@ -1,4 +1,5 @@
 # SAYT (Simple AI Yield Tool)
+![Project Icon](asset/icon.svg)
 
 [中文](asset/README_cn.md)
 
