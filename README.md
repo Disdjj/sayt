@@ -10,7 +10,7 @@ SAYT is a command-line tool designed to interact with Language Model Models (LLM
 To install SAYT, use the following command:
 
 ```sh
-go install github.com/Disdjj/sayt
+go install github.com/Disdjj/sayt@latest
 ```
 
 ## Initialization

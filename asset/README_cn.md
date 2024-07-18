@@ -14,7 +14,7 @@ SAYT 是一个通过命令行与语言模型（LLM）交互的工具。它允许
 要安装 SAYT，请使用以下命令：
 
 ```sh
-go install github.com/Disdjj/sayt
+go install github.com/Disdjj/sayt@latest
 ```
 
 ## 初始化
