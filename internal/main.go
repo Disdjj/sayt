@@ -33,4 +33,8 @@ func InitConfig() {
 func Init() {
 	InitConfig()
 	InitClient()
+	// Load all prompts
+	RepoConfig = BuildRepoConfig()
+	// Load all prompts
+	loadAllPrompts()
 }

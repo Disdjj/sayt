@@ -86,7 +86,7 @@ func BuildRepoConfig() []PromptConfig {
 	}
 	// save the result to the config file
 
-	path = GetProjectPath() + "/prompts.json"
+	path = GetProjectPath() + "prompts.json"
 	file, err := os.Create(path)
 	if err != nil {
 		panic(err)
@@ -123,11 +123,4 @@ func ListCategories(repo string) []string {
 		}
 	}
 	return result
-}
-
-func init() {
-	// Load all prompts
-	RepoConfig = BuildRepoConfig()
-	// Load all prompts
-	loadAllPrompts()
 }
