@@ -15,6 +15,7 @@ var useCmd = &cobra.Command{
 }
 
 func useImpl(cmd *cobra.Command, args []string) {
+	internal.Init()
 	promptName := args[0]
 	if internal.CategoryMap[promptName] == nil {
 		fmt.Printf("Prompt `%s` not found\n", promptName)

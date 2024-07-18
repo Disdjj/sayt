@@ -30,7 +30,7 @@ func InitConfig() {
 	}
 }
 
-func init() {
+func Init() {
 	InitConfig()
 	InitClient()
 }
