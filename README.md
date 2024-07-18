@@ -24,21 +24,33 @@ This command sets up the necessary configurations for SAYT to interact with LLMs
 
 
 ## Config
-open file `~/sayt/config.toml`
-input your `api-host`/`api-key`/`model`
+
+**open file `~/sayt/config.toml`**
+
+**input your `api-host`/`api-key`/`model`**
+
+## Init Repo
+
+```shell
+sayt repo add basic https://github.com/Disdjj/sayt-basic-prompts.git
+```
+
+## List Repo
+
+list Repo to know how to use
+
+```shell
+sayt repo list 
+sayt repo list category
+```
 
 ## Usage
 
-To use SAYT and interact with an AI assistant, use the following command format:
 
 ```sh
-sayt use assistant 'your message here'
+sayt use ai 'hello'
 ```
-
-For example:
 
 ```sh
-sayt use assistant 'hello'
+git diff | sayt use summarize_git_diff
 ```
-
-This command will send the message "hello" to the AI assistant and return the response.
