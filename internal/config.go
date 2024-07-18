@@ -5,7 +5,7 @@ import (
 	"github.com/mitchellh/go-homedir"
 )
 
-const configPath = ".sayt/.config.toml"
+const configPath = ".sayt/config.toml"
 
 func GetConfigPath() string {
 	// Get Home Path

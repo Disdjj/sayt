@@ -51,7 +51,7 @@ func BuildRepoConfig() []PromptConfig {
 	result := make([]PromptConfig, 0)
 	err := filepath.Walk(
 		path, func(path string, info os.FileInfo, err error) error {
-			if info.IsDir() && filepath.Base(filepath.Dir(filepath.Dir(path))) == "prompts" {
+			if info != nil && info.IsDir() && filepath.Base(filepath.Dir(filepath.Dir(path))) == "prompts" {
 				// check if it has system.md
 				_, err := os.Stat(path + "/system.md")
 				if err == nil {
@@ -128,4 +128,6 @@ func ListCategories(repo string) []string {
 func init() {
 	// Load all prompts
 	RepoConfig = BuildRepoConfig()
+	// Load all prompts
+	loadAllPrompts()
 }

@@ -35,18 +35,15 @@ var (
 
 func loadAllPrompts() {
 	CategoryMap = make(map[string]*PromptNode)
-
-	CategoryMap["log"] = &PromptNode{
-		Category: "log",
+	for _, repoNode := range RepoConfig {
+		for _, category := range repoNode.Categories {
+			promptNode := &PromptNode{
+				Repo:     repoNode.Repo,
+				Category: category,
+				Path:     PromptPathString(repoNode.Repo + "/" + category),
+			}
+			CategoryMap[category] = promptNode
+		}
 	}
 
-	CategoryMap["assistant"] = &PromptNode{
-		Category: "assistant",
-	}
-
-}
-
-func init() {
-	// Load all prompts
-	loadAllPrompts()
 }
