@@ -1,4 +1,4 @@
 [llm]
-api_host = ""
-api_key = ""
-model = ""
+api_host = "" # https://api.deepseek.com/v1
+api_key = "" # sk-xxxx
+model = "" # deepseek-chat
