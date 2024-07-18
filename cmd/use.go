@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/Disdjj/sayt/internal"
 	"github.com/spf13/cobra"
+	"os"
 )
 
 // useCmd represents the use command
@@ -23,8 +24,11 @@ func useImpl(cmd *cobra.Command, args []string) {
 	}
 	prompt := internal.CategoryMap[promptName]
 
-	if len(args) >= 2 {
+	switch {
+	case len(args) == 2: // user input
 		internal.Complete(prompt, args[1])
+	default: // Get from stdin
+		internal.CompleteStream(prompt, os.Stdin)
 	}
 
 }

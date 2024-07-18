@@ -1,8 +1,32 @@
 package internal
 
+import (
+	"io"
+	"os"
+)
+
 type PromptNode struct {
-	Category      string
-	SystemMessage string
+	Repo     string
+	Category string
+	Help     string
+	Path     PromptPathString
+}
+
+type PromptPathString string
+
+func (p PromptPathString) GetSystemMessage() string {
+	finalPath := GetProjectPath() + "/prompts/" + string(p) + "/system.md"
+	// Read the file
+	reader, err := os.Open(finalPath)
+	if err != nil {
+		panic(err)
+	}
+	defer reader.Close()
+	sysStr, err := io.ReadAll(reader)
+	if err != nil {
+		panic(err)
+	}
+	return string(sysStr)
 }
 
 var (
@@ -13,13 +37,11 @@ func loadAllPrompts() {
 	CategoryMap = make(map[string]*PromptNode)
 
 	CategoryMap["log"] = &PromptNode{
-		Category:      "log",
-		SystemMessage: "analyze logs and find the problem, output the result in markdown format",
+		Category: "log",
 	}
 
 	CategoryMap["assistant"] = &PromptNode{
-		Category:      "assistant",
-		SystemMessage: "you are a useful assistant, help user with the following tasks",
+		Category: "assistant",
 	}
 
 }
