@@ -124,3 +124,8 @@ func ListCategories(repo string) []string {
 	}
 	return result
 }
+
+func init() {
+	// Load all prompts
+	RepoConfig = BuildRepoConfig()
+}
