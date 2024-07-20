@@ -34,7 +34,7 @@ func Complete(prompt *PromptNode, message string) {
 	channel := make(chan string, 1)
 	defer close(channel)
 
-	go ShowInTerminal(channel)
+	go Show(channel)
 
 	for {
 		response, err := stream.Recv()
@@ -79,7 +79,7 @@ func CompleteStream(prompt *PromptNode, messageReader io.Reader) {
 	channel := make(chan string, 1)
 	defer close(channel)
 
-	go ShowInTerminal(channel)
+	go Show(channel)
 
 	for {
 		response, err := stream.Recv()
